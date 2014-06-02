@@ -1,7 +1,6 @@
-<html>
+<?php $this->load->view("head"); ?>
 <body>
-    <h1>
-        dashboard
-    </h1>
+  <div class="container">
+    <?php $this->load->view("navbar"); ?>
+  </div>
 </body>
-</html>

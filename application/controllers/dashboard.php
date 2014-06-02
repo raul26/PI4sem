@@ -5,9 +5,7 @@ class Dashboard extends CI_Controller {
   {
     parent:: __construct();
     $this->load->model('login_model');
-    $this->load->helper('form');
-    $this->load->helper('url');
-    $this->load->library('form_validation');
+    $this->load->model('dashboard_model');
     $this->load->library('session');
     $this->load->helper('url');
 
@@ -19,8 +17,12 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
+    $datos=file(base_url("Domotico1.txt"));
+    foreach($datos as $renglon){
+      $this->dashboard_model->saveDom($renglon); 
+    }
     $this->load->view('dashboard');
-	}
+  }
 
 }
 ?>
