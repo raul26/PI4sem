@@ -17,11 +17,22 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-    $datos=file(base_url("Domotico1.txt"));
-    foreach($datos as $renglon){
-      $this->dashboard_model->saveDom($renglon); 
+    $itemValid=$this->dashboard_model->queryItem(); 
+    $lastUpdate = filectime("Domotico1.txt");
+    if(isset($itemValid[0])){
+      if($itemValid[0]["ultima_actualizacion"]!= $lastUpdate){
+        $datos=file(base_url("Domotico1.txt"));
+        $this->dashboard_model->saveDom($datos, $lastUpdate); 
+      }
+    }else{
+        $datos=file(base_url("Domotico1.txt"));
+        $this->dashboard_model->saveDom($datos, $lastUpdate); 
     }
-    $this->load->view('dashboard');
+    $items=$this->dashboard_model->allItems();
+    $data= array(
+      "items" => $items 
+    );
+    $this->load->view('dashboard', $data);
   }
 
 }

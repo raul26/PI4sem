@@ -8,18 +8,37 @@ class Dashboard_model extends CI_Model
     $this->load->database();
   }
 
-  public function saveDom($renglon)
+  public function saveDom($datos, $lastUpdate)
   {
-    $item = explode(' ', $renglon);
-    $data= array(
-      'id_objeto' => $item[0],
-      'nombre_objeto' => $item[1],
-      'status_objeto' => $item[2],
-      'hora' =>$item[3],
-      'fecha' =>$item[4]
-    );
+    foreach($datos as $renglon){
+      $item = explode(' ', $renglon);
+      $data= array(
+        'id_objeto' => $item[0],
+        'nombre_objeto' => $item[1],
+        'status_objeto' => $item[2],
+        'hora' =>$item[3],
+        'fecha' =>$item[4],
+        "ultima_actualizacion"=>$lastUpdate
+      );
+      $query = $this->db->insert('status',$data);
+    }
+  }
+  public function queryItem(){
+    $query= $this->db
+            ->from('status') 
+            ->order_by("id_status", "desc")
+            ->limit(1)
+            ->get();
+    return $query->result_array();
+  }
 
-    $query = $this->db->insert('status',$data);
+  public function allItems(){
+    $query= $this->db
+            ->from('status') 
+            ->order_by("id_status", "desc")
+            ->limit(6)
+            ->get();
+    return $query->result_array();
   }
 }
 
