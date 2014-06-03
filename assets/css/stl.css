@@ -1,6 +1,6 @@
 .aboutUs{
   background:#1abc9c;
-  padding:10px 20px 10px 20px;;
+  padding:30px 20px 10px 20px;;
 }
 .aboutUs p{
   text-align:justify;
@@ -12,4 +12,58 @@
   text-align:center;
   margin-bottom:20px;
 }
-
+.contenidos{
+padding:10px 38px 10px 38px;
+}
+.contenidos img{
+  float:left;
+  margin-right:10px;
+}
+.login{
+}
+.special{
+  padding-top:30px;
+}
+.diagrama{
+  border:1px solid;
+  width:330px;
+  margin: auto;
+  position:relative;
+}
+.elemento{
+  background:green;
+  height:15px;
+  width:15px;
+  position:absolute;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  cursor:pointer;
+}
+.Ventana1{
+  top:5px;
+  left:154px;
+}
+.Ventana2{
+  top:5px;
+  left:222px;
+}
+.Puerta1{
+  top:53px;
+  left:122px;
+}
+.Puerta2{
+  top:12px;
+  left:142px;
+}
+.Foco1{
+  top:44px;
+  left:200px;
+}
+.Foco2{
+  top:100px;
+  left:131px;
+}
+.off{
+  background:red;
+}

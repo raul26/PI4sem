@@ -3,17 +3,17 @@
         <li><a href="<?php echo base_url(""); ?>">Inicio<span class="navbar-unread">1</span></a></li>
         <li class="dropdown">
         <li><a href="<?php echo base_url("index.php/aboutUs"); ?>">About Us</a></li>
-        <li><a href="index.php/login">Login</a></li>
+        <?php if(!isset($this->session->userdata['nombre'])){ ?>
+          <li><a href="<?php echo base_url("index.php/login"); ?>">Login</a></li>
+        <?php }else{ ?>
+         <li><a href="<?php echo base_url("index.php/dashboard"); ?>">Dashboard</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuario <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->session->userdata['nombre']; ?> <b class="caret"></b></a>
           <span class="dropdown-arrow"></span>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="<?php echo base_url("index.php/login/destroy"); ?>">LogOut</a></li>
           </ul>
         </li>
+        <?php } ?>
       </ul>
     </div>

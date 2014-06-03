@@ -10,5 +10,5 @@
 
   <script type="text/javascript" src="<?php echo base_url('assets/js/jquery-1.10.2.min.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/application.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 </head>
