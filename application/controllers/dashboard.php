@@ -34,6 +34,14 @@ class Dashboard extends CI_Controller {
     );
     $this->load->view('dashboard', $data);
   }
+  
+  public function timeLine(){
+    $items=$this->dashboard_model->allTime();
+    $data= array(
+      "items" => $items 
+    );
+    $this->load->view('timeLine',$data);
+  } 
 
 }
 ?>

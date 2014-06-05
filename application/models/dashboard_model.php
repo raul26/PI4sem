@@ -40,6 +40,13 @@ class Dashboard_model extends CI_Model
             ->get();
     return $query->result_array();
   }
+  public function allTime(){
+    $query= $this->db
+                 ->from('status') 
+                 ->order_by("id_status", "desc")
+                 ->get();
+    return $query->result_array();
+  }
 }
 
 ?>

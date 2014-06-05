@@ -7,6 +7,7 @@
           <li><a href="<?php echo base_url("index.php/login"); ?>">Login</a></li>
         <?php }else{ ?>
          <li><a href="<?php echo base_url("index.php/dashboard"); ?>">Dashboard</a></li>
+         <li><a href="<?php echo base_url("index.php/dashboard/timeLine"); ?>">Time Line</a></li>
          <li><a href="<?php echo base_url("index.php/login/destroy"); ?>">Logout</a></li>
         <?php } ?>
       </ul>
