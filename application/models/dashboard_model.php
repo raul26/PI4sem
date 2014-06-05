@@ -16,8 +16,8 @@ class Dashboard_model extends CI_Model
         'id_objeto' => $item[0],
         'nombre_objeto' => $item[1],
         'status_objeto' => $item[2],
-        'hora' =>$item[3],
-        'fecha' =>$item[4],
+        'hora' =>$item[4],
+        'fecha' =>$item[3],
         "ultima_actualizacion"=>$lastUpdate
       );
       $query = $this->db->insert('status',$data);
